@@ -1,0 +1,129 @@
+{
+    "name": "ngx-translate-manager",
+    "displayName": "ngx-translate-manager",
+    "description": "",
+    "version": "1.0.5",
+    "publisher": "0x8b",
+    "preview": true,
+    "readme": "README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/0x8b/vscode-ngx-translate-manager.git"
+    },
+    "bugs": {
+        "url": "https://github.com/0x8b/vscode-ngx-translate-manager/issues",
+        "email": "mkgumienny@gmail.com"
+    },
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.37.0"
+    },
+    "categories": [
+        "Snippets",
+        "Other"
+    ],
+    "keywords": [
+        "angular",
+        "ngx-translate",
+        "translate",
+        "translations",
+        "i18n"
+    ],
+    "icon": "images/ngx-translate-manager-icon-256px.png",
+    "galleryBanner": {
+        "color": "#070707",
+        "theme": "dark"
+    },
+    "activationEvents": [
+        "onLanguage:html",
+        "onLanguage:typescript",
+        "onLanguage:javascript"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "configuration": {
+            "title": "ngx-translate-manager",
+            "properties": {
+                "ngx-translate-manager.locale": {
+                    "type": "string",
+                    "default": "**/locale/en.json",
+                    "scope": "resource",
+                    "description": "A glob pattern that defines files and folders to search for. The glob pattern will be matched against the paths of resulting matches relative to their workspace."
+                },
+                "ngx-translate-manager.exclude": {
+                    "type": "string",
+                    "default": "**/node_modules/**",
+                    "scope": "resource",
+                    "description": "A glob pattern that defines files and folders to exclude. The glob pattern will be matched against the file paths of resulting matches relative to their workspace."
+                },
+                "ngx-translate-manager.pattern": {
+                    "type": "string",
+                    "default": "**/*.{html,js,ts}",
+                    "scope": "resource",
+                    "description": "A glob pattern that specify files which can use extension."
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "ngx-translate-manager.search",
+                "title": "Find Translation",
+                "category": "ngx-translate-manager"
+            },
+            {
+                "command": "ngx-translate-manager.store",
+                "title": "Add Translation",
+                "category": "ngx-translate-manager"
+            },
+            {
+                "command": "ngx-translate-manager.set-locale-file",
+                "title": "Set locale file",
+                "category": "ngx-translate-manager"
+            }
+        ],
+        "menus": {
+            "editor/context": [
+                {
+                    "when": "editorHasSelection",
+                    "command": "ngx-translate-manager.store",
+                    "group": "5_cutcopypaste"
+                },
+                {
+                    "when": "editorHasSelection",
+                    "command": "ngx-translate-manager.search",
+                    "group": "5_cutcopypaste"
+                }
+            ]
+        },
+        "keybindings": [
+            {
+                "command": "ngx-translate-manager.search",
+                "key": "shift+alt+t",
+                "when": "editorHasSelection"
+            },
+            {
+                "command": "ngx-translate-manager.store",
+                "key": "ctrl+t",
+                "when": "editorTextFocus"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^5.2.6",
+        "@types/node": "^10.12.21",
+        "@types/vscode": "^1.37.0",
+        "glob": "^7.1.4",
+        "mocha": "^6.1.4",
+        "typescript": "^3.3.1",
+        "tslint": "^5.12.1",
+        "vscode-test": "^1.0.2"
+    }
+}
