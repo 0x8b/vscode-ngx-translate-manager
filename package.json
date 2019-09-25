@@ -1,7 +1,7 @@
 {
     "name": "ngx-translate-manager",
     "displayName": "ngx-translate-manager",
-    "description": "",
+    "description": "The plugin allows you to speed up your work with the ngx-translate library.",
     "version": "1.0.5",
     "publisher": "0x8b",
     "preview": true,
@@ -14,7 +14,7 @@
         "url": "https://github.com/0x8b/vscode-ngx-translate-manager/issues",
         "email": "mkgumienny@gmail.com"
     },
-    "license": "MIT",
+    "license": "SEE LICENSE IN LICENSE",
     "engines": {
         "vscode": "^1.37.0"
     },
