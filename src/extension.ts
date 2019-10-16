@@ -6,7 +6,7 @@ import { TextDecoder } from 'util';
 // allowed characters in key: `0-9a-zA-Z._-`
 
 const DICTIONARY_KEY = 'ngx-translate-manager-dictionary';
-const DEFAULT_LOCALE = '**/locale/**/en.json';
+const DEFAULT_LOCALE = '**/assets/i18n/en.json';
 const DEFAULT_EXCLUDE = '**/node_modules/**';
 
 let watcher: vscode.FileSystemWatcher | null = null;
@@ -41,7 +41,7 @@ async function getLocaleUri(): Promise<vscode.Uri | undefined> {
 }
 
 async function setLocaleUri() {
-    const action = await showMessage('Dictionary not found', ['Browse', 'Cancel']);
+    const action = await showMessage('File with translations not found', ['Browse', 'Cancel']);
 
     if (action === 'Browse') {
         await vscode.commands.executeCommand('ngx-translate-manager.set-locale-file');
@@ -65,9 +65,9 @@ async function parseJSON(content: string) {
 
         return parsed;
     } catch (e) {
-        const action = await showMessage('Parsing the dictionary failed', ['Set new dictionary', 'Modify', 'Cancel']);
+        const action = await showMessage('Parsing file with translations failed', ['Set new file', 'Modify', 'Cancel']);
 
-        if (action === 'Set new dictionary') {
+        if (action === 'Set new file') {
             await vscode.commands.executeCommand('ngx-translate-manager.set-locale-file');
         } else if (action === 'Modify') {
             // TODO: open invalid document
@@ -193,7 +193,7 @@ function getCompletionItemProvider(cache: vscode.Memento): vscode.CompletionItem
             const dictionary = cache.get(DICTIONARY_KEY) as any || {};
 
             if (Object.keys(dictionary).length === 0) {
-                const action = await showMessage('Your dictionary is empty', ['Browse', 'Cancel']);
+                const action = await showMessage('Your file with translations is empty', ['Browse', 'Cancel']);
 
                 if (action === 'Browse') {
                     await vscode.commands.executeCommand('ngx-translate-manager.set-locale-file');
