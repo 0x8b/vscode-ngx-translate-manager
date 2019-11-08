@@ -57,8 +57,9 @@ suite('Extension Test Suite', async () => {
                         const { insertText: snippet, additionalTextEdits } = item!;
                         const edits = new vscode.WorkspaceEdit();
 
+                        await editor.insertSnippet(snippet, position);
+
                         edits.set(editor.document.uri, [
-                            vscode.TextEdit.insert(position, snippet.value.replace(/\$\d+/g, '')),
                             ...additionalTextEdits
                         ]);
 

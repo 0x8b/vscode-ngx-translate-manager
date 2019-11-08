@@ -67,30 +67,30 @@ function getTemplate(context: string, filetype: string): string {
 
         if (match) {
             if (match[0].includes('[')) {
-                return "'${key}' | translate";
+                return "'#key' | translate";
             }
 
-            return "{{ '${key}' | translate }}";
+            return "{{ '#key' | translate }}";
         }
 
-        return '${key}';
+        return '#key';
     } else if (context.lastIndexOf('>') < context.lastIndexOf('<')) {
-        return 'translate="${key}" [translateParams]="{ ${params} }"';
+        return 'translate="#key" [translateParams]="#params"';
     } else {
         if (filetype === 'html') {
-            return "{{ '${key}' | translate : { ${params} } }}";
+            return "{{ '#key' | translate : #params }}";
         }
 
-        return "'${key}'";
+        return "'#key'";
     }
 }
 
 function getSnippet(template: string, key: string, params: string | undefined): vscode.SnippetString {
-    const snippet = template
-        .replace('${key}', key)
-        .replace('${params}', params ? params : '')
-        .replace('translate : {  }', 'translate')
-        .replace(' [translateParams]="{  }"', '');
+    let snippet = template
+        .replace('#key', key)
+        .replace('#params', params ? '${1:{ ' + params + ' \\}}' : '')
+        .replace('translate :  ', 'translate ')
+        .replace(' [translateParams]=""', '');
 
     return new vscode.SnippetString(snippet + '$0');
 }
@@ -111,6 +111,10 @@ export async function paste(snippet: vscode.SnippetString, range: vscode.Range |
     await editor.insertSnippet(new vscode.SnippetString(value), range || editor.selection);
 }
 
+function format(param: string, index: number): string {
+    return `'${param.slice(2, -2).trim()}': $${index + 2}`;
+}
+
 function getParams(cache: any, key: string): string | undefined {
     const dictionary = (typeof cache.get === 'function' && cache.get(DICTIONARY_KEY)) || cache as any || {};
 
@@ -122,7 +126,7 @@ function getParams(cache: any, key: string): string | undefined {
 
     if (matches) {
         return matches
-            .map((param: string, index: number) => `'${param.slice(2, -2).trim()}': $${index + 1}`)
+            .map(format)
             .join(', ');
     }
 }
@@ -316,7 +320,7 @@ export function provideCompletionItems(cache: any) {
 
                 if (params) {
                     params = params
-                        .map((p: string, i: number) => "'" + p.slice(2, -2).trim() + "': $" + (i + 1))
+                        .map(format)
                         .join(', ');
                 }
 

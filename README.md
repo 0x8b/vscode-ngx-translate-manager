@@ -2,7 +2,7 @@
 
 [How it works (youtube.com)](https://www.youtube.com/watch?v=I0l3yrFvXfI) | [Link to Marketplace](https://marketplace.visualstudio.com/items?itemName=0x8b.ngx-translate-manager)
 
-![demo](images/demo.gif)
+![demo](images/demo.webp)
 
 ## Features
 
@@ -10,6 +10,7 @@
 - generated syntax depends on context
 - tooltips
 - intellisense completions
+- fuzzy matching for searching
 - easy adding and searching translations
 - correctly supports ``template: ` ` `` in Angular's `@Component`
 
