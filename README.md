@@ -1,38 +1,59 @@
-# [vscode-ngx-translate-manager](https://marketplace.visualstudio.com/items?itemName=0x8b.ngx-translate-manager)
+# vscode-ngx-translate-manager
+
+[How it works (youtube.com)](https://www.youtube.com/watch?v=I0l3yrFvXfI) | [Link to Marketplace](https://marketplace.visualstudio.com/items?itemName=0x8b.ngx-translate-manager)
 
 ![demo](images/demo.gif)
 
 ## Features
 
-- the extension automatically sort keys in a file with translations (specified in settings) after you add new key,
-- tooltips (hover key name),
-- context sensitive (appropriate syntax will be generated).
+- automatic sort keys in the dictionary
+- generated syntax depends on context
+- tooltips
+- intellisense completions
+- easy adding and searching translations
+- correctly supports ``template: ` ` `` in Angular's `@Component`
 
-## Usage
+## Quick start
 
-Video: https://www.youtube.com/watch?v=I0l3yrFvXfI
+- Install this extension from [the VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=0x8b.ngx-translate-manager) (or by entering `ext install 0x8b.ngx-translate-manager` at the command palette <kbd>Ctrl</kbd>+<kbd>P</kbd>).
+- Open an Angular project and create `assets/i18n/en.json` file.
 
-#### How to get list of all available keys?
+## How to…
 
-- type `_.`
+#### …add translation to dictionary?
 
-#### How to add translation to dictionary?
+- Select the text you want to add to the dictionary.
+- <kbd>Ctrl</kbd>+<kbd>T</kbd>
+- Enter the key in dialog box.
 
-- select text
-- press `Ctrl + T`
-- specify key
+#### …get list of all available keys?
 
-#### How to search key for selected text?
+Type `_.` to get intellisense completions list.
 
-- press `Shift + Alt + T`
-- choose the best matching key
+#### …to search key for selected text?
 
-## Extension Settings
+- <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>
+- Pick the best matching key.
 
-This extension contributes to the following settings:
+## Configuration
 
-- `ngx-translate.manager.locale`: A glob pattern that defines files and folders to search for. The glob pattern will be matched against the paths of resulting matches relative to their workspace. Default `**/assets/i18n/en.json`.
+This extension provides options in VSCode's configuration settings. You can find the settings under `File > Preferences > Settings > Extensions > ngx-translate-manager`.
 
-- `ngx-translate.manager.excludeGlobPattern`: A glob pattern that defines files and folders to exclude. The glob pattern will be matched against the file paths of resulting matches relative to their workspace. Default `**/node_modules/**`.
+Some highlights:
 
-- `ngx-translate.manager.pattern`: A glob pattern that specify files which can use extension. Default `**/*.{html,js,ts}`.
+- `ngx-translate-manager.locale` - a glob pattern that defines files and folders to search for. The glob pattern will be matched against the paths of resulting matches relative to their workspace. By default `**/assets/i18n/en.json`.
+- `ngx-translate-manager.exclude` - a glob pattern that defines files and folders to exclude. By default `**/node_modules/**`.
+- `ngx-translate-manager.pattern` - a glob pattern that specify files which can use extension. By default `**/*.{html,js,ts}`.
+
+## Issues
+
+Feel free to submit issues and enhancement requests.
+
+## Contributing
+
+Please run tests `npm run test` before you submit a **Pull request**.
+
+## License
+
+[MIT](https://github.com/0x8b/vscode-ngx-translate-manager/blob/master/LICENSE)
+

@@ -1,0 +1,5 @@
+
+    <p><span _.c.></span></p>
+💥
+
+    <p><span translate="c.d" [translateParams]="{ 'param': , 'param2':  }"></span></p>

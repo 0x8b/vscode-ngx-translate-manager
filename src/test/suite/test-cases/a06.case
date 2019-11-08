@@ -1,0 +1,3 @@
+<p title="_."></p>
+💥
+<p title="{{ 'a' | translate }}"></p>

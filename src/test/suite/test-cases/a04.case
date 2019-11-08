@@ -1,0 +1,15 @@
+@Component({
+  template: `
+
+    <p>_.</p>
+  `
+})
+export class Example {}
+💥
+@Component({
+  template: `
+
+    <p>{{ 'a' | translate }}</p>
+  `
+})
+export class Example {}

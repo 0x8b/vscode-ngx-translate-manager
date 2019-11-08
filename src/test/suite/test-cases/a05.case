@@ -1,0 +1,13 @@
+@Component({
+  template: ``
+})
+export class Example {
+  key: _.
+}
+💥
+@Component({
+  template: ``
+})
+export class Example {
+  key: 'c.self'
+}

@@ -1,0 +1,9 @@
+{
+    "a": "A",
+    "b": "B {{ param }}",
+    "c": {
+        "self": "C",
+        "d": "D {{ param }} {{ param2 }}"
+    },
+    "e": "lorem ipsum"
+}

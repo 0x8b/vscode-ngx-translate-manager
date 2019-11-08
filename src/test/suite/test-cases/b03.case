@@ -1,0 +1,9 @@
+@Component({
+  template: ` l r m  `
+})
+export class Example {}
+💥
+@Component({
+  template: `{{ 'e' | translate }}`
+})
+export class Example {}

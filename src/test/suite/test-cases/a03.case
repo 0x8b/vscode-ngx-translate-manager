@@ -1,0 +1,9 @@
+@Component({
+  template: `_.`
+})
+export class Example {}
+💥
+@Component({
+  template: `{{ 'c.d' | translate : { 'param': , 'param2':  } }}`
+})
+export class Example {}
