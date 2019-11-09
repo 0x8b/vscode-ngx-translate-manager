@@ -35,9 +35,7 @@
         "theme": "dark"
     },
     "activationEvents": [
-        "onLanguage:html",
-        "onLanguage:typescript",
-        "onLanguage:javascript"
+        "workspaceContains:angular.json"
     ],
     "main": "./out/extension.js",
     "contributes": {

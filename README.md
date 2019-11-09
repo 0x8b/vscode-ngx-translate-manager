@@ -19,10 +19,11 @@
 - easy adding and searching translations
 - correctly supports ``template: ` ` `` in Angular's `@Component`
 
-## Quick start
+## Get started
 
 - Install this extension from [the VSCode Marketplace](https://marketplace.visualstudio.com/items?itemName=0x8b.ngx-translate-manager) (or by entering `ext install 0x8b.ngx-translate-manager` at the command palette <kbd>Ctrl</kbd>+<kbd>P</kbd>).
-- Open an Angular project and create `assets/i18n/en.json` file.
+- This extension is only enabled inside an Angular project (ie. with an `angular.json` or `.angular-cli.json` file in workspace).
+- Open an Angular project and create `./src/assets/i18n/en.json` file.
 
 ## How to…
 
