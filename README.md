@@ -1,5 +1,6 @@
 # vscode-ngx-translate-manager
 
+[![Build Status](https://travis-ci.org/0x8b/vscode-ngx-translate-manager.svg?branch=master)](https://travis-ci.org/0x8b/vscode-ngx-translate-manager)
 ![version-short](https://vsmarketplacebadge.apphb.com/version-short/0x8b.ngx-translate-manager.svg)
 ![installs](https://vsmarketplacebadge.apphb.com/installs/0x8b.ngx-translate-manager.svg)
 ![rating](https://vsmarketplacebadge.apphb.com/rating/0x8b.ngx-translate-manager.svg)
