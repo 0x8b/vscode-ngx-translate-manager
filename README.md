@@ -2,7 +2,12 @@
 
 [How it works (youtube.com)](https://www.youtube.com/watch?v=I0l3yrFvXfI) | [Link to Marketplace](https://marketplace.visualstudio.com/items?itemName=0x8b.ngx-translate-manager)
 
+&nbsp;
+<br>
+<br>
 ![demo](images/demo.webp)
+&nbsp;
+<br>
 
 ## Features
 
