@@ -1,5 +1,9 @@
 # vscode-ngx-translate-manager
 
+![version-short](https://vsmarketplacebadge.apphb.com/version-short/0x8b.ngx-translate-manager.svg)
+![installs](https://vsmarketplacebadge.apphb.com/installs/0x8b.ngx-translate-manager.svg)
+![rating](https://vsmarketplacebadge.apphb.com/rating/0x8b.ngx-translate-manager.svg)
+
 [How it works (youtube.com)](https://www.youtube.com/watch?v=I0l3yrFvXfI) | [Link to Marketplace](https://marketplace.visualstudio.com/items?itemName=0x8b.ngx-translate-manager)
 
 &nbsp;
