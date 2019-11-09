@@ -35,7 +35,8 @@
         "theme": "dark"
     },
     "activationEvents": [
-        "workspaceContains:angular.json"
+        "workspaceContains:angular.json",
+        "workspaceContains:.angular-cli.json"
     ],
     "main": "./out/extension.js",
     "contributes": {
